@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+  
+  <parameter name="browser" value="chrome" />
+	<parameter name="baseURL" value="http://den00pld.us.oracle.com:14001/sysadmin/" />
+	<parameter name="username" value="xelsysadm" />
+	<parameter name="password" value="Welcome123" />
+	
+
+
+	<parameter name="baseUrlEM" value="http://sca00jbw.us.oracle.com:7051/em/" />
+	<test name="Sanity Tests" preserve-order="true">
+		<parameter name="usernameEM" value="weblogic" />
+		<parameter name="passwordEM" value="Welcome123" />
+
+
+
+<parameter name="baseUrlIdentity" value="http://den00pld.us.oracle.com:14001/identity/" />
+	<!-- <test name="Sanity Tests" preserve-order="true"> -->
+		<parameter name="usernameIdentity" value="xelsysadm" />
+		<parameter name="passwordIdentity" value="Welcome123" />
+
+
+		<classes>
+			<class name="testcases.TC004_CreateApplicationInstance">
+				<methods>
+					 <include name="testCreateSandBox" /> 
+					<include name="soa" />
+					<include name="validation" />
+					<!-- <include name="oIMUserEntityForMultiTenanacy"/> <include name="adjustPreciseScaleForTenantCode"/> -->
+				</methods>
+			</class>
+
+		</classes>
+
+	</test>
+</suite> <!-- Suite -->
